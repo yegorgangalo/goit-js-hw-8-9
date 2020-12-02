@@ -7,9 +7,8 @@ module.exports = {
     entry: './src/index.js', //шлях до точки входу відносно даного файлу налаштувань
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js',
+        filename: '[name].[contenthash].js',//назва файлу, куди буде записано весь код з усіх файлів js
         publicPath: '',
-        // filename: 'main.js'//назва файлу, куди буде записано весь код з усіх файлів js
     },
     module: {
         rules: [
@@ -55,12 +54,9 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new CleanWebpackPlugin(),
+  plugins: [
+      new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({ filename: '[name].[contenthash].css'}),
-        new HtmlWebpackPlugin({ template: "./src/index.html" })
-    ],
-    devServer: {
-          port: 9000
-        }
+      new HtmlWebpackPlugin({ template: "./src/index.html" })
+  ],
 };

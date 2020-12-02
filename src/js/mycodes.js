@@ -26,5 +26,6 @@
     func2.manyConsoleLogs('g');
     func2.manyConsoleLogs('h');
 
+console.log(process.env.NODE_ENV);
     /* -------------------------- */
 // };
