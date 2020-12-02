@@ -4,8 +4,8 @@
 
     const higherOrderFunction = () => {
         let num = 'a';
-        const manyConsoleLogs = (vr) => {
-            num += vr;
+        const manyConsoleLogs = (wer) => {
+            num += wer;
             qwerty += 2;
             console.log(num);
             console.log(qwerty);

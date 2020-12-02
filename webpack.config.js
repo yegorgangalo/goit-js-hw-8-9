@@ -1,12 +1,14 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js', //шлях до точки входу відносно даного файлу налаштувань
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js'
+        filename: '[name].[contenthash].js',
+        publicPath: '',
         // filename: 'main.js'//назва файлу, куди буде записано весь код з усіх файлів js
     },
     module: {
@@ -18,7 +20,7 @@ module.exports = {
             },
             {
               test: /\.s[ac]ss$/i,
-              use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+              use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "postcss-loader","sass-loader"],
             },
             {
               test: /\.(png|jpe?g|svg|gif)$/i,
@@ -54,6 +56,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({ filename: 'styles.css' }),
         new HtmlWebpackPlugin({ template: "./src/index.html" })
     ],

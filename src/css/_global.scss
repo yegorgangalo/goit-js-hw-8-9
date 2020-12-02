@@ -3,3 +3,18 @@ img {
   margin: 0;
   max-width: 100%;
 }
+
+::placeholder {
+  color: gray;
+}
+
+.image {
+  background-image: url(../images/_DSC1603.jpg);
+  background-image: linear-gradient(white 30%, black 30%);
+}
+@media (min-resolution: 2dppx) {
+  .image {
+    background-image: linear-gradient(green 30%, black 30%);
+    background-image: url(../images/milk188@2x.png);
+  }
+}
