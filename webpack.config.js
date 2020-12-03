@@ -18,8 +18,12 @@ module.exports = {
             use: "babel-loader"
             },
             {
+              test: /\.css$/,
+              use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+            },
+            {
               test: /\.s[ac]ss$/i,
-              use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "postcss-loader","sass-loader"],
+              use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
             },
             {
               test: /\.(png|jpe?g|svg|gif)$/i,

@@ -1,25 +1,25 @@
-body {
-  font-family: "Courier New", Courier, monospace;
-  min-height: 100vh;
-  background-color: teal;
-  background: linear-gradient(to right, aqua, yellow);
-  cursor: pointer;
-  transform: scale(1);
-  opacity: 1;
-  text-shadow: none;
-  display: flex;
+// body {
+//   font-family: "Courier New", Courier, monospace;
+//   min-height: 100vh;
+//   background-color: teal;
+//   background: linear-gradient(to right, aqua, yellow);
+//   cursor: pointer;
+//   transform: scale(1);
+//   opacity: 1;
+//   text-shadow: none;
+//   display: flex;
 
-  transition: transform 250ms linear;
+//   transition: transform 250ms linear;
 
-  &:matches(:hover, :focus) {
-    transform: scale(0.9);
-  }
-}
+//   &:matches(:hover, :focus) {
+//     transform: scale(0.9);
+//   }
+// }
 
-p:not(.active, .visible) {
-  color: red;
-}
+// p:not(.active, .visible) {
+//   color: red;
+// }
 
-a:any-link {
-  color: red;
-}
+// a:any-link {
+//   color: red;
+// }
