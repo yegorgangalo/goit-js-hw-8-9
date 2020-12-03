@@ -3,7 +3,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
+// require('dotenv').config();
+console.log('process.env.APP_ENV=', process.env.APP_ENV);
+
+const config = {
     entry: './src/index.js', //шлях до точки входу відносно даного файлу налаштувань
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -59,8 +62,15 @@ module.exports = {
         ],
     },
   plugins: [
-      new CleanWebpackPlugin(),
-      new MiniCssExtractPlugin({ filename: '[name].[contenthash].css'}),
+      // new CleanWebpackPlugin(),
+      new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css'}),
       new HtmlWebpackPlugin({ template: "./src/index.html" })
   ],
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
 };
+
+process.env.APP_ENV !== 'devserver' ?
+  config.plugins.push(new CleanWebpackPlugin()) :
+  console.log('It is devserver. CleanWebpackPlugin not added');
+
+module.exports = config;

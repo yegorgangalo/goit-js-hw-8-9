@@ -1,37 +1,40 @@
 import images from './gallery-items.js';
 
-const galleryRef = document.querySelector('.js-gallery');
+    console.log(process.env.NODE_ENV);
 
-const arrayImgHTML = images.map( image => {
-    const tagLi = document.createElement('li');
-    const tagA = document.createElement('a');
-    const tagImg = document.createElement('img');
+    const galleryRef = document.querySelector('.js-gallery');
 
-    tagLi.classList.add('gallery__item');
-    tagImg.classList.add('gallery__image');
-    tagA.classList.add('gallery__link');
-    tagA.href = image.original;
-    tagImg.src = image.preview;
-    tagImg.alt = image.description;
-    tagImg.setAttribute('data-source', image.original);
+    const arrayImgHTML = images.map(image => {
+        const tagLi = document.createElement('li');
+        const tagA = document.createElement('a');
+        const tagImg = document.createElement('img');
 
-    tagA.appendChild(tagImg);
-    tagLi.appendChild(tagA);
+        tagLi.classList.add('gallery__item');
+        tagImg.classList.add('gallery__image');
+        tagA.classList.add('gallery__link');
+        tagA.href = image.original;
+        tagImg.src = image.preview;
+        tagImg.alt = image.description;
+        tagImg.setAttribute('data-source', image.original);
 
-    return tagLi;
-});
+        tagA.appendChild(tagImg);
+        tagLi.appendChild(tagA);
 
-galleryRef.append(...arrayImgHTML);
+        return tagLi;
+    });
 
-
-
-
-
-
-
-
+    galleryRef.append(...arrayImgHTML);
 
 // export default () => {
+// }
+
+
+
+
+
+
+
+
 
 //     let qwerty = 1;
 
@@ -58,7 +61,4 @@ galleryRef.append(...arrayImgHTML);
 //     const func2 = higherOrderFunction();
 //     func2.manyConsoleLogs('g');
 //     func2.manyConsoleLogs('h');
-
-// console.log(process.env.NODE_ENV);
     /* -------------------------- */
-// };
