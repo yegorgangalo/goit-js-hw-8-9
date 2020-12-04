@@ -157,3 +157,37 @@ body {
 .lightbox__button:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* мої стилі */
+.div-next-img {
+  position: absolute;
+  width: 30%;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--animation-duration) var(--timing-function);
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.div-left {
+  @extend .div-next-img;
+  left: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.div-right {
+  @extend .div-next-img;
+  right: 0;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+}
