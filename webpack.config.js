@@ -69,4 +69,8 @@ process.env.APP_ENV !== 'devserver' ?
   config.plugins.push(new CleanWebpackPlugin()) :
   console.log('It is devserver. CleanWebpackPlugin not added');
 
+process.env.NODE_ENV === 'production' ?
+  config.output.path = path.resolve(__dirname, 'build') :
+  console.log('It is development mode. Output in directory "dist"');
+
 module.exports = config;
